@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<?php
+include 'db_connection.php';
+
+$username = 'root'
+$pass = ''
+$host = 'localhost'
+$dbname = 'spartahack_database'
+
+
+
+$dbc = @mysqli_connect($localhost, $username, $pass, $dbname); OR die('Could not connect to MySQL ' . mysqli_connect_error());
+	
+$query = "SELECT USER_NAME, PASSWORD FROM user_information";
+
+$response = @mysqli_query($dbc, $query);
+
+if($reponse) {
+	$row = mysqli_fetch_array($response);
+
+	echo $row["USER_NAME"];
+	echo $row["PASSWORD"];
+				
+} else {
+	echo "Couldnt issue database query";
+	echo mysqli_error($dbc);
+}
+
+
+
+?>
+</body>
+</html>
