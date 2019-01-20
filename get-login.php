@@ -33,7 +33,6 @@ $response = @mysqli_query($dbc, $query);
 		
 		echo "<p style='color:red; text-align:center; font-size: 20px; weight: bold;'>The username or password does not exist.</p>";
 		echo "<p style='color:red; text-align:center; font-size: 20px; weight: bold;'>Please enter a valid login</p>";
-		echo "<div style='width=300px; padding-left: 400px; padding-right: 400px;'><input type='password' class='form-control' id='exampleInputPassword1' placeholder='Password' name = 'password' style='width=50px';></div>";
 
 		include "form.html";
 	}
