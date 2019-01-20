@@ -18,9 +18,11 @@ $response = @mysqli_query($dbc, $query);
 	$user_email = $row["email"];
 	$user_pass = $row["password"];
 	
+	
+	
 	if($_POST["email"] == $user_email) {
 		if(	$_POST["password"] == $user_pass) {
-			echo "SUCCSESS";
+			include "homepage.html";
 		} else {
 			echo "<p style='color:red; text-align:center; font-size: 20px; weight: bold;'>The username or password does not exist.</p>";
 			echo "<p style='color:red; text-align:center; font-size: 20px; weight: bold;'>Please enter a valid login</p>";
@@ -28,8 +30,11 @@ $response = @mysqli_query($dbc, $query);
 		}
 	} else {
 		
+		
 		echo "<p style='color:red; text-align:center; font-size: 20px; weight: bold;'>The username or password does not exist.</p>";
 		echo "<p style='color:red; text-align:center; font-size: 20px; weight: bold;'>Please enter a valid login</p>";
+		echo "<div style='width=300px; padding-left: 400px; padding-right: 400px;'><input type='password' class='form-control' id='exampleInputPassword1' placeholder='Password' name = 'password' style='width=50px';></div>";
+
 		include "form.html";
 	}
 				
